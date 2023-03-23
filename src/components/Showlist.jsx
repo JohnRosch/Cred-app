@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Button, Card, Grid } from 'semantic-ui-react'
 
 function Showlist() {
   const [credentials, setCredentials] = useState([]);
@@ -25,13 +26,38 @@ function Showlist() {
 
   return (
     <div>
-      {credentials.map((credential) => (
-        <div key={credential.id}>
-          <h3>Account: {credential.account}</h3>
-          <h3>Username: {credential.username}</h3>
-          <h3>Password: {credential.password}</h3>
-        </div>
+      <Grid centered columns={3} style={{ marginTop: '200px' }} >
+        <Grid.Row>
+            {credentials.map((credential) => (
+            <div key={credential.id} style={{ margin: '10px' }} >
+              <Card.Group centered style={{ margin: '10px' }} >
+                <Card>
+                  <Card.Content>
+                    <Card.Header>{credential.account}</Card.Header>
+                    <Card.Description>
+                      Username: {credential.username}
+                    </Card.Description>
+                    <Card.Description>
+                      Password: {credential.password}
+                    </Card.Description>
+                  </Card.Content>
+                  <Card.Content extra>
+                    <div className='ui two buttons'>
+                      <Button basic color='green'>
+                        Update
+                      </Button>
+                      <Button basic color='red'>
+                        Delete
+                      </Button>
+                    </div>
+                  </Card.Content>
+                </Card>
+              </Card.Group>
+            </div>
       ))}
+        </Grid.Row>
+
+      </Grid>
     </div>
   );
 }
