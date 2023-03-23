@@ -1,16 +1,25 @@
 // import './App.css'
-import Apicall from './components/Apicall'
+import { BrowserRouter as Router, Routes, Route,} from "react-router-dom";
+import Showlist from './components/Showlist'
 import Create from './components/Create'
+import Draft from './components/Draft'
+import 'semantic-ui-css/semantic.min.css'
 
 function App() {
   
   return (
     <div className="App">
-      <h1>Cred-App</h1>
-          <Create />
-            <Apicall />
+      
+      <Router>
+          <Routes>
+            <Route path='/' element= {<Create />} />
+            <Route path='/Showlist' element= {<Showlist />} />
+            <Route path='/Draft' element= {<Draft />} />
+          </Routes>
+      </Router>
+
     </div>
-  )
+  );
 }
 
 export default App

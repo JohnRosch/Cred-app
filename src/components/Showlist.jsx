@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-function Apicall() {
+function Showlist() {
   const [credentials, setCredentials] = useState([]);
 
   useEffect(() => {
@@ -36,4 +36,4 @@ function Apicall() {
   );
 }
 
-export default Apicall;
+export default Showlist;
