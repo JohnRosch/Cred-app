@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
-import { Button, Form, Grid, Header, Image, Message, Segment } from 'semantic-ui-react'
+import { Button, Form, Grid, Header, Segment } from 'semantic-ui-react'
+import { Link } from 'react-router-dom'
+
 
 function Create() {
   const [account, setAccount] = useState('');
@@ -52,8 +54,8 @@ function Create() {
     <div>
       <Grid textAlign='center' style={{ height: '100vh' }} verticalAlign='middle'>
         <Grid.Column style={{ maxWidth: 450 }}>
-          <Header as='h2' color='teal' textAlign='center'>
-            Log-in to your account
+          <Header as='h2' color='grey' textAlign='center'>
+            Add Account's Credentials
           </Header>
           <Form size='large'  autocomplete="off" onSubmit={handleSubmit}>
             <Segment stacked>
@@ -68,9 +70,9 @@ function Create() {
                 placeholder='Password'
                 onChange={(e) => setPassword(e.target.value)} />
 
-              <Button color='teal' fluid size='large'>
-                Add Account
-              </Button>
+              <Button color='purple' fluid size='large'>Add</Button>
+                <br />
+              <Button color='purple' fluid size='large' as={Link} to='/showlist'>Account List</Button>
             </Segment>
           </Form>
         </Grid.Column>

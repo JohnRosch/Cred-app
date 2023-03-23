@@ -1,8 +1,8 @@
 // import './App.css'
-import { BrowserRouter as Router, Routes, Route,} from "react-router-dom";
+import { BrowserRouter as Router, Link, Routes, Route,} from "react-router-dom";
 import Showlist from './components/Showlist'
 import Create from './components/Create'
-import Draft from './components/Draft'
+import Navbar from "./components/Navbar";
 import 'semantic-ui-css/semantic.min.css'
 
 function App() {
@@ -11,10 +11,10 @@ function App() {
     <div className="App">
       
       <Router>
+          <Navbar />
           <Routes>
             <Route path='/' element= {<Create />} />
             <Route path='/Showlist' element= {<Showlist />} />
-            <Route path='/Draft' element= {<Draft />} />
           </Routes>
       </Router>
 
